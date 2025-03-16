@@ -44,7 +44,7 @@ for category, label in LABELS.items():
     folder_path = os.path.join(DATASET_PATH, category)
 
     if not os.path.exists(folder_path):
-        print(f"⚠️ Warning: Folder {folder_path} not found!")
+        print(f" Warning: Folder {folder_path} not found!")
         continue
 
     for img_name in os.listdir(folder_path):  # Fixed: Now using correct subfolder path
@@ -56,7 +56,7 @@ for category, label in LABELS.items():
 
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         if img is None:
-            print(f"⚠️ Error loading: {img_path}")
+            print(f" Error loading: {img_path}")
             continue
 
         img = cv2.resize(img, IMAGE_SIZE)  # Resize safely
@@ -64,7 +64,7 @@ for category, label in LABELS.items():
 
 # Ensure data is not empty before unpacking
 if len(data) == 0:
-    raise ValueError("🚨 No valid images were loaded. Check dataset path & file formats!")
+    raise ValueError(" No valid images were loaded. Check dataset path & file formats!")
 
 X, y = zip(*data)
 X = np.array(X) / 255.0  # Normalize images (0 to 1 scale)
