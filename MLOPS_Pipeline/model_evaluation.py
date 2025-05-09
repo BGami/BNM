@@ -80,4 +80,4 @@ plt.grid(True)
 plt.savefig("loss_plot.png")
 logger.report_image("Eye Model Loss", "Loss Plot", local_path="loss_plot.png")
 
-print("✅ Evaluation completed and results logged to ClearML.")
+print(" Evaluation completed and results logged to ClearML.")
