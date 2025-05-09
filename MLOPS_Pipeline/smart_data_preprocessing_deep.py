@@ -29,10 +29,10 @@ resolved_dataset_path = find_best_dataset_root(dataset_path)
 if not resolved_dataset_path:
     raise ValueError("❌ Could not locate dataset folders: Closed, Yawn, Open, no_yawn")
 
-print(f"📁 Using dataset path: {resolved_dataset_path}")
+print(f" Using dataset path: {resolved_dataset_path}")
 
 # Step 3: Print structure
-print("📂 Folder structure:")
+print(" Folder structure:")
 for root, dirs, _ in os.walk(resolved_dataset_path):
     level = root.replace(resolved_dataset_path, "").count(os.sep)
     indent = "    " * level
@@ -47,7 +47,7 @@ data = []
 for category, label in LABELS.items():
     folder_path = os.path.join(resolved_dataset_path, category)
     if not os.path.exists(folder_path):
-        print(f"⚠️ Skipping missing folder: {folder_path}")
+        print(f"⚠ Skipping missing folder: {folder_path}")
         continue
     for file in os.listdir(folder_path):
         img_path = os.path.join(folder_path, file)
@@ -58,7 +58,7 @@ for category, label in LABELS.items():
         data.append([img, label])
 
 if not data:
-    raise ValueError("❌ No data found. Please check dataset folder structure.")
+    raise ValueError(" No data found. Please check dataset folder structure.")
 
 # Prepare dataset arrays
 X, y = zip(*data)
@@ -71,4 +71,4 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 np.savez("processed_data.npz", X_train=X_train, X_test=X_test, y_train=y_train, y_test=y_test)
 task.upload_artifact("processed_data", artifact_object="processed_data.npz")
 
-print("✅ Preprocessing completed and uploaded to ClearML.")
+print(" Preprocessing completed and uploaded to ClearML.")
