@@ -1,8 +1,12 @@
 from clearml import Task, Dataset
 import os
+import sys
 import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
+
+# 🛠 Fix encoding issues for Windows terminals
+sys.stdout.reconfigure(encoding='utf-8')
 
 # Step 0: Initialize ClearML task
 task = Task.init(project_name="BNM Pipeline", task_name="Step 1 - Smart Data Preprocessing (Deep Scan)")
@@ -29,7 +33,7 @@ resolved_dataset_path = find_best_dataset_root(dataset_path)
 if not resolved_dataset_path:
     raise ValueError("Could not locate dataset folders: Closed, Yawn, Open, no_yawn")
 
-print(f"Using dataset path: {resolved_dataset_path}".encode('utf-8', errors='ignore').decode())
+print(f"Using dataset path: {resolved_dataset_path}")
 
 # Step 3: Print structure
 print("Folder structure:")
@@ -47,7 +51,7 @@ data = []
 for category, label in LABELS.items():
     folder_path = os.path.join(resolved_dataset_path, category)
     if not os.path.exists(folder_path):
-        print(f" Skipping missing folder: {folder_path}")
+        print(f"Skipping missing folder: {folder_path}")
         continue
     for file in os.listdir(folder_path):
         img_path = os.path.join(folder_path, file)
