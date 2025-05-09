@@ -29,7 +29,7 @@ resolved_dataset_path = find_best_dataset_root(dataset_path)
 if not resolved_dataset_path:
     raise ValueError("Could not locate dataset folders: Closed, Yawn, Open, no_yawn")
 
-print(f" Using dataset path: {resolved_dataset_path}")
+print(f"Using dataset path: {resolved_dataset_path}")
 
 # Step 3: Print structure
 print(" Folder structure:")
