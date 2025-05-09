@@ -27,7 +27,7 @@ def find_best_dataset_root(root_path):
 
 resolved_dataset_path = find_best_dataset_root(dataset_path)
 if not resolved_dataset_path:
-    raise ValueError("❌ Could not locate dataset folders: Closed, Yawn, Open, no_yawn")
+    raise ValueError("Could not locate dataset folders: Closed, Yawn, Open, no_yawn")
 
 print(f" Using dataset path: {resolved_dataset_path}")
 
@@ -47,7 +47,7 @@ data = []
 for category, label in LABELS.items():
     folder_path = os.path.join(resolved_dataset_path, category)
     if not os.path.exists(folder_path):
-        print(f"⚠ Skipping missing folder: {folder_path}")
+        print(f" Skipping missing folder: {folder_path}")
         continue
     for file in os.listdir(folder_path):
         img_path = os.path.join(folder_path, file)
