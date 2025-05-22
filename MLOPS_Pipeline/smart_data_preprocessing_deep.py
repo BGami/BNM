@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-# 🛠 Fix encoding issues for Windows terminals
+#  Fix encoding issues for Windows terminals
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Step 0: Initialize ClearML task
