@@ -49,4 +49,4 @@ jobs:
         run: pip install clearml
 
       - name: Trigger pipeline via controller
-        run: python MLOPS_Pipeline/bnm_pipeline_controller.py
+        run: python pipeline_controller.py
