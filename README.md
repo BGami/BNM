@@ -1,3 +1,4 @@
+## BNM
 # Driver Drowsiness Detection Project
 
 ## Overview
@@ -64,7 +65,7 @@ The repository is organized into several key components:
 3. Build and run the application on an Android device
 
 ## Usage
-1. For model training and evaluation, refer to notebooks in the Model Training directory
+1. For model training and evaluation, refer to notebooks in the Baseline Code directory
 2. To run the MLOps pipeline, use the notebook in the MLOPS_Pipeline directory
 3. For mobile application usage, install the app on an Android device and follow the in-app instructions
 
