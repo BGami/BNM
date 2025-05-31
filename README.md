@@ -70,7 +70,7 @@ The repository is organized into several key components:
 3. For mobile application usage, install the app on an Android device and follow the in-app instructions
 
 ## Note
-For webapp version, you can download all codes from here (Google Drive link). We are doing this way as we could not upload it to GitHub.
+For webapp version, you can download all codes from here (https://drive.google.com/drive/folders/1hxSkltq1Iw8wxMj5tyn0sL4ISxft4xMQ?usp=sharing). We are doing this way as we could not upload it to GitHub.
 
 ## License
 This project is available for academic and research purposes.
